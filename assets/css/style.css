@@ -1,7 +1,7 @@
 
 /* Fondo con imagen y solo blur */
 body {
-  background: url('../img/plataformas/fondo.webp') no-repeat center center fixed;
+  background: url('../img/plataformas/fondo.png') no-repeat center center fixed;
   background-size: cover;
   position: relative;
 }
@@ -35,3 +35,4 @@ body::before {
       background-color: rgba(22, 22, 22, 0.219);
 
     }
+
