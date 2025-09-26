@@ -1,19 +1,22 @@
 
-/* Fondo con imagen y solo blur */
 body {
-  background: url('../img/plataformas/fondo.png') no-repeat center center fixed;
+  background: url('/assets/img/plataformas/fondo.png') no-repeat center center;
   background-size: cover;
-  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
+
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0); /* transparente, no oscurece */
-  backdrop-filter: blur(4px); /* difuminado suave */
-  z-index: -1; /* se queda detrás del contenido */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); /* soporte Safari */
+  z-index: -1;
 }
+
 
    
    
@@ -35,4 +38,5 @@ body::before {
       background-color: rgba(22, 22, 22, 0.219);
 
     }
+
 
