@@ -17,6 +17,35 @@ body::before {
   z-index: -1;
 }
 
+/* ============================= */
+/*       Footer                  */
+/* ============================= */
+
+footer {
+  background-color: #1f2937;
+  color: #d1d5db;
+  padding: 2rem 1.5rem;
+}
+
+footer a {
+  transition: opacity 0.3s ease;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+
+footer p {
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+footer .social-icons img {
+  width: 2rem;
+  height: 2rem;
+}
+
 
    
    
@@ -38,5 +67,6 @@ body::before {
       background-color: rgba(22, 22, 22, 0.219);
 
     }
+
 
 
