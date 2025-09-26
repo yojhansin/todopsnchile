@@ -1,0 +1,38 @@
+{
+  "Spotify": [
+    { "name": "1 mes (cuenta personal)", "price": "4500" },
+    { "name": "2 meses (cuenta personal)", "price": "5500" },
+    { "name": "3 meses (cuenta personal)", "price": "6500" },
+    { "name": "6 meses (cuenta personal)", "price": "9500" }
+  ],
+  "Netflix": [
+    { "name": "1 mes (pantalla)", "price": "4500" },
+    { "name": "2 meses (pantalla)", "price": "6500" },
+    { "name": "3 meses (pantalla)", "price": "9500" }
+  ],
+  "HBO": [
+    { "name": "1 mes", "price": "4500" },
+    { "name": "2 meses", "price": "5500" },
+    { "name": "3 meses", "price": "6500" }
+  ],
+  "Prime Video": [
+    { "name": "1 mes", "price": "4500" },
+    { "name": "2 meses", "price": "5500" },
+    { "name": "3 meses", "price": "6500" }
+  ],
+  "Plex": [
+    { "name": "1 mes", "price": "4500" },
+    { "name": "2 meses", "price": "6500" },
+    { "name": "3 meses", "price": "9500" }
+  ],
+  "YouTube": [
+    { "name": "1 mes", "price": "4500" },
+    { "name": "2 meses", "price": "6500" },
+    { "name": "3 meses", "price": "8500" }
+  ],
+  "Star Plus": [
+    { "name": "1 mes", "price": "4500" },
+    { "name": "2 meses", "price": "5500" },
+    { "name": "3 meses", "price": "6500" }
+  ]
+}

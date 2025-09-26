@@ -1,0 +1,33 @@
+   /* Fondo con imagen */
+    body {
+      background: url('../img/plataformas/fondo.webp') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.575); /* leve capa blanca */
+      backdrop-filter: blur(2px); /* difuminado */
+      z-index: -1; /* se queda detrás del contenido */
+    }
+   
+   
+   
+   
+   
+   @keyframes slideDown {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .slide-down { animation: slideDown 0.8s ease-out forwards; }
+    .header-bg {
+      background-image: url('../img/banderadechile.jpg');
+      background-size: cover;
+      background-position: center 69%; 
+    }
+    .header-overlay {
+      backdrop-filter: blur(13px);
+      background-color: rgba(22, 22, 22, 0.219);
+    }

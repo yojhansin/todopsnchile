@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todopsnchile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+<!-- Header completo -->
+<header class="relative w-full top-0">
+  <div class="slide-down relative w-11/12 sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-5/12 mx-auto rounded-b-3xl overflow-hidden shadow-lg">
+    <div class="absolute inset-0">
+      <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="assets/video-header/video-aysen.mp4" type="video/mp4">
+        Tu navegador no soporta videos en HTML5.
+      </video>
+      <div class="absolute inset-0" style="background-color: rgba(0,0,0,0.25); backdrop-filter: blur(1px);"></div>
+    </div>
+
+    <div class="relative p-6 sm:p-8 flex flex-col items-center text-center text-white">
+      <div class="absolute top-2 left-3 text-sm sm:text-base">
+        <span class="bg-black/40 px-2 py-1 rounded-md text-white text-xs sm:text-sm">
+          CEO: Roberto Coliboro
+        </span>
+      </div>
+
+      <div class="absolute top-2 right-3 text-sm sm:text-base flex flex-col items-end">
+        <a href="https://www.instagram.com/todopsnchhile" target="_blank" class="flex items-center gap-1 hover:underline">
+          <img src="assets/img/iconos/instagram.png" alt="Instagram" class="w-5 h-5">
+          <span>@todopsnchile</span>
+        </a>
+      </div>
+
+      <div class="relative w-full flex flex-col items-center">
+        <svg width="240" height="70" viewBox="0 0 240 70">
+          <path id="curve" d="M10,60 Q120,0 230,60" fill="transparent"/>
+          <text fill="white" font-size="16" font-family="Manrope" font-weight="600">
+            <textPath href="#curve" startOffset="50%" text-anchor="middle">
+              “Somos el cambio a tu rutina”
+            </textPath>
+          </text>
+        </svg>
+
+        <img src="assets/img/logo/logoroberto.png" alt="Logo" class="w-40 h-40 sm:w-48 sm:h-48 -mt-6 mb-4 zoom-in transition transform hover:scale-105 duration-300 ease-in-out">
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 fade-in">
+        Todopsnchile
+      </h1>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 w-full fade-in">
+        <input id="searchInput" type="text" placeholder="Buscar plataforma..." 
+          class="border border-gray-300 rounded-full p-2 sm:p-3 w-full sm:w-72 text-sm sm:text-base text-black placeholder-gray-400
+                 focus:outline-none focus:ring-1 focus:ring-blue-400 focus:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+        <button onclick="searchPlatform()" class="px-4 py-2 sm:px-5 sm:py-3 bg-white text-blue-600 font-medium rounded-full hover:bg-gray-100 text-sm sm:text-base w-full sm:w-auto
+                               transition duration-300 ease-in-out transform hover:scale-105 shadow hover:shadow-lg">
+          Buscar
+        </button>
+      </div>
+
+      <button onclick="scrollToPlatforms()" class="mt-4 px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 text-sm sm:text-base w-full sm:w-auto fade-in
+                                        transition duration-300 ease-in-out transform hover:scale-105 shadow hover:shadow-lg">
+        Ver plataformas
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Lista de plataformas -->
+<section id="planes" class="p-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-8">
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('Netflix')">
+    <img src="assets/img/plataformas/netflix.png" alt="Netflix" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">Netflix</span>
+  </button>
+
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('Spotify')">
+    <img src="assets/img/plataformas/spotify.png" alt="Spotify" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">Spotify</span>
+  </button>
+
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('HBO')">
+    <img src="assets/img/plataformas/hbo.png" alt="HBO" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">HBO</span>
+  </button>
+
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('Prime Video')">
+    <img src="assets/img/plataformas/primevideo.png" alt="Prime Video" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">Prime Video</span>
+  </button>
+
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('Plex')">
+    <img src="assets/img/plataformas/plex.png" alt="Plex" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">Plex</span>
+  </button>
+
+  <button class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-2xl hover:-translate-y-2 transform transition duration-300 ease-in-out"
+          onclick="showPlans('YouTube')">
+    <img src="assets/img/plataformas/youtube.png" alt="YouTube" class="w-16 h-16 mb-4 hover:scale-110 transform transition duration-300 ease-in-out">
+    <span class="text-gray-800 font-semibold text-lg">YouTube</span>
+  </button>
+</section>
+
+<!-- Modal -->
+<div id="plansModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-xl p-6 w-80 text-center space-y-4 shadow-xl transition duration-300 ease-in-out transform scale-95">
+    <h2 id="modalTitle" class="text-xl font-bold mb-2"></h2>
+    <div id="modalContent" class="space-y-2"></div>
+    <button onclick="closeModal()" class="mt-2 px-4 py-2 bg-gray-300 rounded-xl hover:bg-gray-400 transition duration-300 ease-in-out transform hover:scale-105">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  let plans = {};
+  let selectedPlatform = "";
+  let selectedPlan = null;
+  let userData = { name: "", email: "" };
+
+  fetch('planes.json')
+    .then(response => response.json())
+    .then(data => { plans = data; })
+    .catch(error => console.error('Error al cargar planes:', error));
+
+  function searchPlatform() {
+    const val = document.getElementById("searchInput").value.trim().toLowerCase();
+    const platformKeys = Object.keys(plans);
+    const found = platformKeys.find(key => key.toLowerCase().includes(val));
+    if (found) { showPlans(found); } 
+    else { alert("Plataforma no encontrada"); }
+  }
+
+  function scrollToPlatforms() {
+    document.getElementById("planes").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function showPlans(service) {
+    if (!plans[service]) { alert("No hay planes disponibles para " + service); return; }
+    selectedPlatform = service; selectedPlan = null; userData = { name: "", email: "" };
+    const modalTitle = document.getElementById("modalTitle");
+    const modalContent = document.getElementById("modalContent");
+    modalTitle.textContent = service;
+    modalContent.innerHTML = "";
+    plans[service].forEach((p) => {
+      const btn = document.createElement("button");
+      btn.className = "block w-full border p-2 rounded hover:bg-gray-100 transition duration-300 ease-in-out";
+      btn.textContent = `${p.name} — $${p.price} CLP`;
+      btn.onclick = () => choosePlan(p);
+      modalContent.appendChild(btn);
+    });
+    const modal = document.getElementById("plansModal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function choosePlan(plan) {
+    selectedPlan = plan;
+    const modalContent = document.getElementById("modalContent");
+    modalContent.innerHTML = `
+      <p class="font-semibold mb-2">Has elegido: <strong>${selectedPlatform}</strong> (${plan.name})</p>
+      <input id="userName" type="text" placeholder="Tu nombre" class="border rounded-xl p-2 w-full mb-2 focus:ring-1 focus:ring-blue-400 focus:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+      <input id="userEmail" type="email" placeholder="Tu correo electrónico" class="border rounded-xl p-2 w-full mb-2 focus:ring-1 focus:ring-blue-400 focus:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+      <button id="continueBtn" onclick="saveUserData()" class="px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Continuar</button>
+    `;
+  }
+
+  function saveUserData() {
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+    if (!name || !email) { alert("Por favor completa todos los campos."); return; }
+    userData.name = name; userData.email = email;
+    showSummary();
+  }
+
+  function showSummary() {
+    const modalContent = document.getElementById("modalContent");
+    modalContent.innerHTML = `
+      <h3 class="font-bold text-lg">Resumen de la compra</h3>
+      <p><strong>Plataforma:</strong> ${selectedPlatform}</p>
+      <p><strong>Plan:</strong> ${selectedPlan.name} — $${selectedPlan.price} CLP</p>
+      <p><strong>Nombre:</strong> ${userData.name}</p>
+      <p><strong>Correo:</strong> ${userData.email}</p>
+      <button onclick="showTransferData()" class="mt-2 px-4 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-105">Confirmar compra</button>
+    `;
+  }
+
+  function showTransferData() {
+    const modalContent = document.getElementById("modalContent");
+    modalContent.innerHTML = `
+      <h3 class="font-bold text-lg">Datos de transferencia</h3>
+      <p>Banco: Banco de Chile</p>
+      <p>Cuenta: 123456789</p>
+      <p>Nombre: Juan Pérez</p>
+      <p>RUT: 12.345.678-9</p>
+      <p>Monto: $${selectedPlan.price} CLP</p>
+      <div class="mt-4 p-2 border rounded bg-yellow-50 text-yellow-800 text-sm">
+        ⚠️ <strong>Importante:</strong> Recuerda adjuntar tu comprobante de pago en el mensaje de WhatsApp para que tu compra sea confirmada.
+      </div>
+      <button id="confirmPaymentBtn" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Confirmar pago</button>
+    `;
+
+    document.getElementById("confirmPaymentBtn").addEventListener("click", confirmPayment);
+  }
+
+  function confirmPayment() {
+    const msg = `Hola, he realizado una compra:\n\nPlataforma: ${selectedPlatform}\nPlan: ${selectedPlan.name} — $${selectedPlan.price} CLP\nNombre: ${userData.name}\nCorreo: ${userData.email}\n\nYa realicé la transferencia.`;
+    window.location.href = `https://wa.me/56932626133?text=${encodeURIComponent(msg)}`;
+  }
+
+  function closeModal() {
+    document.getElementById("plansModal").classList.add("hidden");
+    document.getElementById("modalContent").innerHTML = "";
+  }
+</script>
+</body>
+</html>
